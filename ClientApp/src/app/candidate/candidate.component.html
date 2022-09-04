@@ -1,0 +1,35 @@
+<html>
+<body>
+  <div>
+    <h1>Candidate Form</h1>
+    <form [formGroup]="candidateForm" (ngSubmit)="onSubmit()">
+      <label for="fname">First Name:</label><br>
+      <input type="text" id="fname" name="fname" formControlName="fname">
+      <br />
+      <label for="lname">Last Name:</label><br>
+      <input type="text" id="lname" name="fname" formControlName="lname">
+      <br />
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="fname" formControlName="email">
+      <br />
+      Skills:
+      <button class="btn btn-secondary my-2" type="button" (click)="addLangs()">Add</button><br />
+      <div formArrayName="language">
+        <div *ngFor="let lang of languages.controls; let i=index">
+          <div [formGroupName]="i">
+            {{i}}
+            <label>Language : </label> <input type="text" formControlName="lang">
+            <label>Profeciency : </label> <input type="text" formControlName="prof">
+          </div><br />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <!--<p>
+    <button type="button" (click)="addLangs()">Add</button>
+  </p>-->
+  </div>
+</body>
+</html>

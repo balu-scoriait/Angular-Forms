@@ -1,0 +1,10 @@
+span{ color : red; }
+input.ng-invalid.ng-touched
+{
+    border : 2px solid red;
+}
+input.ng-valid {
+  border: 2px solid green;
+}
+
+
