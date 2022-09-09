@@ -1,9 +1,9 @@
-<header>
+<!--<header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-warning border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">Angular_Forms</a>
+      <a class="navbar-brand" [routerLink]="['/']"><b>Angular Forms</b></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -42,3 +42,96 @@
     </div>
   </nav>
 </header>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidebar {
+      margin: 0;
+      padding: 0;
+      width: 300px;
+      background-color: #E4E5EF;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+
+      .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+      }
+
+        .sidebar a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        .sidebar a:hover:not(.active) {
+          background-color: #555;
+          color: white;
+        }
+
+    <!--div.content {
+      margin-left: 320px;
+      padding: 50px 16px;
+
+      height: 1000px;
+     <!-- border: 2px solid red;-->
+    }-->
+
+    @media screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+        .sidebar a {
+          float: left;
+        }
+
+      div.content {
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      .sidebar a {
+        text-align: center;
+        float: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+
+    <!-- <li class="nav-item"
+  [routerLinkActive]="['link-active']"
+  [routerLinkActiveOptions]="{ exact: true }">-->
+    <!--</li>-->
+    <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+    <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+    <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+    <a class="nav-link text-dark" [routerLink]="['/forms']">Register</a>
+    <a class="nav-link text-dark" [routerLink]="['/candidate']">Candidate</a>
+
+  </div>
+
+ <!-- <div class="content">
+    <router-outlet></router-outlet>
+  </div>-->
+
+</body>
+</html>

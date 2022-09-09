@@ -4,37 +4,37 @@
     <label for="fname">First Name:</label><br>
     <input type="text" id="fname" name="fname" formControlName="fname">
     <div>
-      <span *ngIf="((accountForm.get('fname').touched || accountForm.get('fname').dirty) && accountForm.get('fname').errors)">
-        <span *ngIf="accountForm.get('fname').errors.required">Please provide a first name</span>
-        <span *ngIf="accountForm.get('fname').errors.minlength">Name field contains atleast 5 characters</span>
+      <span *ngIf="((accountForm.get('fname')?.touched || accountForm.get('fname')?.dirty) && accountForm.get('fname')?.errors)">
+        <span *ngIf="accountForm.get('fname')?.errors.required">Please provide a first name</span>
+        <span *ngIf="accountForm.get('fname')?.errors.minlength">Name field contains atleast 5 characters</span>
       </span>
     </div>
 
     <label for="lname">Last Name:</label><br>
     <input type="text" id="fname" name="lname" formControlName="lname">
     <div>
-      <span *ngIf="((accountForm.get('lname').touched || accountForm.get('lname').dirty) && accountForm.get('lname').errors)">
-        <span *ngIf="accountForm.get('lname').errors.required">Please provide a last name</span>
-        <span *ngIf="accountForm.get('lname').errors.minlength">Last Name field contains atleast 5 characters</span>
+      <span *ngIf="((accountForm.get('lname')?.touched || accountForm.get('lname')?.dirty) && accountForm.get('lname')?.errors)">
+        <span *ngIf="accountForm.get('lname')?.errors.required">Please provide a last name</span>
+        <span *ngIf="accountForm.get('lname')?.errors.minlength">Last Name field contains atleast 5 characters</span>
       </span>
     </div>
 
     <label for="email">Enter Email:</label><br>
     <input type="text" id="email" name="email" formControlName="email"><br>
     <div>
-      <span *ngIf="((accountForm.get('email').touched || accountForm.get('email').dirty) && accountForm.get('email').errors)">
-        <span *ngIf="accountForm.get('email').errors.required">Email is required</span>
-        <span *ngIf="accountForm.get('email').errors?.email">Please enter a valid email address</span>
-        <span *ngIf="accountForm.get('email').errors?.validateEmail">Please enter a valid domain address</span>
+      <span *ngIf="((accountForm.get('email')?.touched || accountForm.get('email')?.dirty) && accountForm.get('email')?.errors)">
+        <span *ngIf="getError('email')?.required">Email is required</span>
+        <span *ngIf="getControl('email')?.errors?.email">Please enter a valid email address</span><br />
+        <span *ngIf="accountForm.get('email')?.errors?.validateEmail">Please enter a valid domain address</span>
       </span>
     </div>
 
     <label for="phone">Enter Phone:</label><br>
     <input type="text" id="phone" name="phone" formControlName="phone"><br>
     <div>
-      <span *ngIf="((accountForm.get('phone').touched || accountForm.get('phone').dirty) && accountForm.get('phone').errors)">
-        <span *ngIf="accountForm.controls.phone.value.errors.required">Phone is required</span>
-        <span *ngIf="accountForm.get('phone').errors.minlength">Phone number should contain 10 digits</span>
+      <span *ngIf="((accountForm.get('phone')?.touched || accountForm.get('phone')?.dirty) && accountForm.get('phone')?.errors)">
+        <span *ngIf="accountForm.controls.phone.errors.required">Phone is required</span>
+        <span *ngIf="accountForm.get('phone')?.errors.minlength">Phone number should contain 10 digits</span>
       </span>
     </div>
 
@@ -42,8 +42,8 @@
     <input type="text" id="address" name="address" formControlName="address"><br><br>
       <p *ngIf="!accountForm.valid">Complete the form to enable button.</p> <!--true-->
     <button type="submit" class="btn btn-primary" [disabled]="!accountForm.valid">Submit</button>
-    <button type="button" title="setValue( )" class="btn btn-success mx-2" (click)="setForm()">Set Values</button>
-    <button type="button" title="patchValue( )" class="btn btn-success" (click)="patchForm()">Update Values</button>
+    <button type="button" title="setValue( )" class="btn btn-secondary mx-2" (click)="setForm()">Set Values</button>
+    <button type="button" title="patchValue( )" class="btn btn-secondary" (click)="patchForm()">Update Values</button>
   </form>
 </div>
 

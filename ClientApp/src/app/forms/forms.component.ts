@@ -52,5 +52,15 @@ patchForm()
 this.accountForm.patchValue({ address: "China" })
 }
 
+getControl(control: any)  // getter function to get control
+{
+  return this.accountForm.get(control);
+}
+getError(control: any)   // getter function to get control and error
+{
+  return this.accountForm.get(control)?.errors;
+}
+
+
 
 } // Closing Class
